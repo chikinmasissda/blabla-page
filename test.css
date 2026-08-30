@@ -1,0 +1,31 @@
+body {
+    background-color: #101214;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    padding: 10px 20px;
+    text-indent: 1px;
+    border-bottom: 2px solid #232629;
+}
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #ffffff;
+    margin: 5px;
+}
+.content {
+    text-indent: 5px;
+    color: #bbc3cb;
+    padding-left: 10px;
+}
+.content3 {
+    padding: 10px 20px;
+}
+.content3 h2 {
+    margin: 10px;
+}
+.content3 p {
+    color: #bbc3cb;
+}
