@@ -1,86 +1,179 @@
+:root {
+    --bg-main: #101214;
+    --bg-card: #1a1d21;
+    --border-color: #232629;
+    --text-primary: #ffffff;
+    --text-muted: #bbc3cb;
+
+    --gap-lg: 20px;
+    --gap-md: 12px;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
-    background-color: #101214;
-    color: #ffffff;
-    font-family: Arial, sans-serif;
-    margin: 0;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: sans-serif;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
 .header {
-    padding: 10px 20px;
-    text-indent: 1px;
-    border-bottom: 2px solid #232629;
+    padding: 10px var(--gap-lg);
+    border-bottom: 2px solid var(--border-color);
 }
+
 .header h1 {
     font-size: 24px;
-    color: #ffffff;
-    margin: 5px;
+    margin: 5px 0;
 }
 
-.content {
-    color: #bbc3cb;
-    padding-left: 10px;
-}
-
-.content p {
-    margin-left: 10px;
-    margin-bottom: 12px;
-    line-height: 1.6;
-}
-
+.content,
 .content2 {
-    padding: 10px 20px;
+    padding: 10px var(--gap-lg);
+}
+
+.content p,
+.content2 p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-top: 0;
+    margin-bottom: var(--gap-md);
+    word-break: keep-all;
 }
 
 .content2 h2 {
-    margin: 10px 0 20px 0;
-}
-
-.content2 p {
-    color: #bbc3cb;
-    margin-top: 5px;
-    line-height: 1.5;
+    margin: 10px 0 var(--gap-lg) 0;
 }
 
 .content2 ul {
     list-style: none;
-    padding-left: 0;
+    padding: 0;
+    margin: 0;
 }
 
 .category h3 {
-    color: #ffffff;
     padding-left: 8px;
     margin-top: 25px;
+    margin-bottom: var(--gap-md);
 }
 
 .item-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background-color: #1a1d21;
-    padding: 15px;
+    align-items: flex-start;
+    gap: var(--gap-lg);
+    padding: var(--gap-lg);
     margin-bottom: 15px;
+    background-color: var(--bg-card);
     border-radius: 8px;
-    gap: 20px;
-    height: 180px;
-    box-sizing: border-box;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.item-container:hover {
+    background-color: #22262b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.item-container:focus-visible {
+    outline: 2px solid var(--text-primary);
+    outline-offset: 2px;
 }
 
 .text-content {
     flex: 1;
-    height: 100%;
-    overflow-y: auto;
-    padding-right: 8px;
 }
 
 .text-content strong {
     font-size: 18px;
-    color: #ffffff;
+    display: block;
+    margin-bottom: 6px;
 }
+
+.interactive-area {
+    position: relative;
+    margin-top: 2px;
+}
+
+.more-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: 0.6;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+.description-box {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(4px);
+    transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.3s ease,
+                transform 0.3s ease;
+}
+
+.description-box p {
+    overflow: hidden;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+    word-break: keep-all;
+}
+
+.item-container:hover .description-box,
+.item-container:focus-within .description-box {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.item-container:hover .more-icon,
+.item-container:focus-within .more-icon {
+    opacity: 0;
+    transform: translateY(-8px);
+}
+
 
 .item-image {
     width: 220px;
-    height: 100%;
+    height: 140px;
     object-fit: cover;
     border-radius: 6px;
     flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.item-container:hover .item-image {
+    transform: scale(1.02);
+}
+
+
+@media (max-width: 640px) {
+    .header,
+    .content,
+    .content2 {
+        padding: 10px 16px;
+    }
+
+    .item-container {
+        flex-direction: column;
+    }
+
+    .item-image {
+    width: 100%;
+    height: auto; 
+    }
 }
