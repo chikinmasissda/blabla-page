@@ -132,6 +132,30 @@ body {
     word-break: keep-all;
 }
 
+.site-button {
+    display: inline-block;
+    margin: var(--gap-lg) 0;
+    padding: 10px 20px;
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.site-button:hover {
+    background-color: #22262b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.site-button:focus-visible {
+    outline: 2px solid var(--text-primary);
+    outline-offset: 2px;
+}
+
 .item-container:hover .description-box,
 .item-container:focus-within .description-box {
     grid-template-rows: 1fr;
