@@ -1,3 +1,13 @@
+:root {
+    --bg-main: #202124;
+    --bg-surface: #303134;
+    --border-color: #5f6368;
+    --text-primary: #e8eaed;
+    --text-muted: #bdc1c6;
+    --accent-blue: #8ab4f8;
+}
+
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -14,6 +24,20 @@
 }
 
 .top-right-links {
+    position: absolute;
+    top: 16px;
+    right: 16px;
     display: flex;
     justify-content: flex-end;
+    gap: 16px;
 } 
+
+.top-right-links a {
+    color: #444444;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.top-right-links a:hover {
+    text-decoration: underline;
+}
