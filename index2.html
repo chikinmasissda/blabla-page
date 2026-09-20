@@ -9,16 +9,27 @@
     <link rel="stylesheet" href="test2.css">
 </head>
 <body>
-    <h1>Google</h1>
+    <div class="top-right-links">
+        <a href="https://mail.google.com/" target="_blank">Gmail</a>
+        <a href="https://www.google.com/imghp" target="_blank">이미지</a>
+    </div>  
 
-    <div>
-        <button class="new-tab-btn">&#43;</button>
-        <input type="text" placeholder="Google에 물어보기">
+    <header class="header">
+        <h1>Google</h1>
+    </header>
+
+    <div class="search-bar">
+        <button class="icon-button">＋</button>
+        <input type="text" class="search-input" placeholder="Google에 물어보기">
+        <button class="icon-button">🎤</button>
+        <button class="icon-button">📷</button>
+        <button class="ai-mode-button">🔍AI 모드</button>
     </div>
 
-    <button onclick="location.href='https://www.naver.com/'">네이버</button>
-    <button onclick="location.href='https://www.youtube.com/'">유튜브</button>
-    <button onclick="location.href='https://www.github.com/'">깃허브</button>
-
+    <div class="button-container">
+        <button class="site-button" onclick="location.href='https://www.naver.com/'">네이버</button>
+        <button class="site-button" onclick="location.href='https://www.youtube.com/'">유튜브</button>
+        <button class="site-button" onclick="location.href='https://www.github.com/'">깃허브</button>
+    </div>
 </body>
 </html>
