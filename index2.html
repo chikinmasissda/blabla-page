@@ -20,17 +20,34 @@
     </header>
 
     <div class="search-bar">
-        <button class="icon-btn">＋</button>
+        <button class="icon-button">＋</button>
         <input type="text" class="search-input" placeholder="Google에 물어보기">
-        <button class="icon-btn">🎤</button>
-        <button class="icon-btn">📷</button>
-        <button class="ai-mode-btn">🔍AI 모드</button>
+        <button class="icon-button">🎤</button>
+        <button class="icon-button">📷</button>
+        <button class="ai-mode-button">🔍AI 모드</button>
     </div>
 
     <div class="button-container">
-        <button class="site-button" onclick="location.href='https://www.naver.com/'">네이버</button>
-        <button class="site-button" onclick="location.href='https://www.youtube.com/'">유튜브</button>
-        <button class="site-button" onclick="location.href='https://www.github.com/'">깃허브</button>
+        <div class="shortcut-item" onclick="location.href='https://www.naver.com/'">
+            <div class="site-button">
+                <img src="https://www.google.com/s2/favicons?domain=naver.com&sz=64" alt="네이버" class="site-icon">
+            </div>
+            <span class="site-name">네이버</span>
+        </div>
+
+        <div class="shortcut-item" onclick="location.href='https://www.youtube.com/'">
+            <div class="site-button">
+                <img src="https://www.google.com/s2/favicons?domain=youtube.com&sz=64" alt="유튜브" class="site-icon">
+            </div>
+            <span class="site-name">유튜브</span>
+        </div>
+
+        <div class="shortcut-item" onclick="location.href='https://www.github.com/'">
+            <div class="site-button">
+                <img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" alt="깃허브" class="site-icon">
+            </div>
+            <span class="site-name">깃허브</span>
+        </div>
     </div>
 </body>
 </html>
