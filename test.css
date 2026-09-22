@@ -183,21 +183,3 @@ body {
 .item-container:hover .item-image {
     transform: scale(1.02);
 }
-
-
-@media (max-width: 640px) {
-    .header,
-    .content,
-    .content2 {
-        padding: 10px 16px;
-    }
-
-    .item-container {
-        flex-direction: column;
-    }
-
-    .item-image {
-    width: 100%;
-    height: auto; 
-    }
-}
