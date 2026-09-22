@@ -75,8 +75,13 @@ font-family: Arial, sans-serif;
     background: none;
     border: none;
     font-size: 16px;
-    padding: 4px;
+    padding: 6px;
     border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #000000;
 }
 
@@ -88,6 +93,15 @@ font-family: Arial, sans-serif;
     padding: 6px 12px;
     border-radius: 16px;
     font-weight: bold;
+}
+
+.icon-button:hover {
+    background-color: #e9e9ea;
+    cursor: pointer;
+}
+
+.ai-mode-button:hover {
+    cursor: pointer;
 }
 
 .button-container {
