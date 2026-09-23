@@ -183,3 +183,40 @@ body {
 .item-container:hover .item-image {
     transform: scale(1.02);
 }
+
+@media (max-width: 800px) {
+
+    body {
+        padding: 0 10px;
+    }
+
+    .header, .content, .content2 {
+        padding: 10px;
+    }
+
+    .site-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .item-container {
+        flex-direction: column-reverse;
+        align-items: stretch;
+        gap: 15px;
+        padding: 16px;
+    }
+
+    .item-image {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+    }
+
+    .text-content strong {
+        font-size: 17px;
+    }
+
+    .description-box p {
+        font-size: 14px;
+    }
+}
