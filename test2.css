@@ -5,7 +5,7 @@
 }
 
 body {
-font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,8 +14,8 @@ font-family: Arial, sans-serif;
     color: #ffffff;
 }
 
-body:has(.search-input:focus) .top-right-links,
-body:has(.search-input:focus) .button-container {
+body:has(.search-bar:focus-within) .top-right-links,
+body:has(.search-bar:focus-within) .button-container {
     opacity: 0.55;
     pointer-events: none;
 }
@@ -66,7 +66,7 @@ body:has(.search-input:focus) .button-container {
     position: relative;
 }
 
-.search-bar:has(.search-input:focus) {
+.search-bar:focus-within {
     height: 160px;
     margin-bottom: -106px;
     align-items: flex-start;
@@ -74,12 +74,12 @@ body:has(.search-input:focus) .button-container {
     border-radius: 24px;
 }
 
-.search-bar:has(.search-input:focus) .search-input {
+.search-bar:focus-within .search-input {
     height: 36px;
 }
 
-.search-bar:has(.search-input:focus) .icon-button:nth-of-type(2),
-.search-bar:has(.search-input:focus) .icon-button:nth-of-type(3) {
+.search-bar:focus-within .icon-button:nth-of-type(2),
+.search-bar:focus-within .icon-button:nth-of-type(3) {
     display: none;
 }
 
@@ -106,7 +106,7 @@ body:has(.search-input:focus) .button-container {
     padding: 10px 0;
 }
 
-.search-bar:has(.search-input:focus) .search-history {
+.search-bar:focus-within .search-history {
     display: block;
 }
 
@@ -119,6 +119,7 @@ body:has(.search-input:focus) .button-container {
     cursor: pointer;
     color: #202124;
     font-size: 16px;
+    text-decoration: none;
 }
 
 .history-item:hover {
@@ -179,7 +180,6 @@ body:has(.search-input:focus) .button-container {
     gap: 12px;
     width: 100px;
     border-radius: 4px;
-
     padding: 16px 0;
     cursor: pointer;
     transition: background-color 0.2s ease;
@@ -211,7 +211,6 @@ body:has(.search-input:focus) .button-container {
     text-align: center;
 }
 
-
 @media (max-width: 600px) {
     .button-container {
         gap: 8px;
@@ -221,4 +220,3 @@ body:has(.search-input:focus) .button-container {
         width: calc(80% - 80px);
     }
 }
-
