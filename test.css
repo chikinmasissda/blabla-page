@@ -31,6 +31,12 @@ body {
     margin: 5px 0;
 }
 
+.dog {
+    width: auto;
+    height: 300px;
+    border-radius: 12px;
+}
+
 .content,
 .content2 {
     padding: 10px var(--gap-lg);
