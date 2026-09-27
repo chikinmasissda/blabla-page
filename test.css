@@ -38,12 +38,14 @@ body {
 }
 
 .content,
-.content2 {
+.content2,
+.content3 {
     padding: 10px var(--gap-lg);
 }
 
 .content p,
-.content2 p {
+.content2 p,
+.content3 p {
     color: var(--text-muted);
     line-height: 1.6;
     margin-top: 0;
@@ -51,7 +53,8 @@ body {
     word-break: keep-all;
 }
 
-.content2 h2 {
+.content2 h2,
+.content3 h2 {
     margin: 10px 0 var(--gap-lg) 0;
 }
 
