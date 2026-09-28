@@ -14,8 +14,9 @@ body {
     color: #ffffff;
 }
 
-body:has(.search-bar:focus-within) .top-right-links,
-body:has(.search-bar:focus-within) .button-container {
+body:has(.search-input:focus) .subtask,
+body:has(.search-input:focus) .top-right-links,
+body:has(.search-input:focus) .button-container {
     opacity: 0.55;
     pointer-events: none;
 }
@@ -58,7 +59,6 @@ body:has(.search-bar:focus-within) .button-container {
     height: 54px;
     width: calc(80% - 40px);
     max-width: 750px;
-    margin-top: 10px;
     background-color: #ffffff;
     border-radius: 26px;
     padding: 0 14px;
@@ -66,7 +66,7 @@ body:has(.search-bar:focus-within) .button-container {
     position: relative;
 }
 
-.search-bar:focus-within {
+.search-bar:has(.search-input:focus) {
     height: 160px;
     margin-bottom: -106px;
     align-items: flex-start;
@@ -74,18 +74,19 @@ body:has(.search-bar:focus-within) .button-container {
     border-radius: 26px;
 }
 
-.search-bar:focus-within .search-input {
+.search-bar:has(.search-input:focus) .search-input {
     height: 36px;
 }
 
-.search-bar:focus-within .icon-button:nth-of-type(2),
-.search-bar:focus-within .icon-button:nth-of-type(3) {
+.search-bar:has(.search-input:focus) .icon-button:nth-of-type(2),
+.search-bar:has(.search-input:focus) .icon-button:nth-of-type(3) {
     display: none;
 }
 
 .search-input {
     flex: 1;
     min-width: 0;
+    height: 100%;
     border: none;
     outline: none;
     font-size: 16px;
@@ -106,7 +107,7 @@ body:has(.search-bar:focus-within) .button-container {
     padding: 10px 0;
 }
 
-.search-bar:focus-within .search-history {
+.search-bar:has(.search-input:focus) .search-history {
     display: block;
 }
 
@@ -135,6 +136,7 @@ body:has(.search-bar:focus-within) .button-container {
 .icon-button {
     background: none;
     border: none;
+    outline: none;
     padding: 6px;
     border-radius: 50%;
     width: 36px;
@@ -143,6 +145,7 @@ body:has(.search-bar:focus-within) .button-container {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
 .btn-icon {
@@ -186,8 +189,114 @@ display: flex;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 110px;
+    gap: 0px;
+    margin-top: 40px;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 6px;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.icon-button:hover {
+    background-color: #e9e9ea;
+}
+
+.btn-icon {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    filter: brightness(0);
+}
+
+.ai-mode-button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    background-color: #f3f5f6; 
+    color: #000000;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}   
+
+.ai-mode-button:hover {
+    background-color: #e9e9ea;
+}
+
+.ai-mode-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    filter: brightness(0);
+}
+
+.subtask {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+    width: 500px;
+    justify-content: center;
+}
+
+.ai-tab {
+    flex: 1;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 8px 20px;
+    background-color: #282828;
+    border: none;
+    outline: none;
+    border-radius: 16px;
+    text-align: left;
+    cursor: default;
+    transition: none;
+}
+
+.ai-tab:hover {
+    background-color: #4a4a49;
+}
+
+.ai-tab-image {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.ai-tab-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.tab-title {
+    font-size: 14px;
+    color: #e3e3e3;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.tab-desc {
+    font-size: 12px;
+    color: #c7c7c7;
+    margin: 0;
+    line-height: 1.3;
 }
 
 .shortcut-item {
@@ -195,11 +304,10 @@ display: flex;
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    width: 100px;
+    width: 110px;
     border-radius: 4px;
     padding: 16px 0;
     cursor: pointer;
-    transition: background-color 0.2s ease;
 }
 
 .shortcut-item:hover {
@@ -228,12 +336,16 @@ display: flex;
     text-align: center;
 }
 
-@media (max-width: 600px) {
-    .button-container {
-        gap: 8px;
+@media (max-width: 650px) {
+    .subtask {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
 
-    .search-bar {
-        width: calc(80% - 80px);
+    .ai-tab {
+        flex: none;
+        width: 244px;
+        height: 55px;
     }
 }
