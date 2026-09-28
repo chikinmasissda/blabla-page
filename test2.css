@@ -64,6 +64,7 @@ body:has(.search-input:focus) .button-container {
     padding: 0 14px;
     gap: 8px;
     position: relative;
+    z-index: 10;
 }
 
 .search-bar:has(.search-input:focus) {
@@ -251,6 +252,7 @@ display: flex;
     width: 500px;
     justify-content: center;
 }
+
 
 .ai-tab {
     flex: 1;
