@@ -107,6 +107,7 @@ body {
 .interactive-area {
     position: relative;
     margin-top: 2px;
+    min-height: 24px;
 }
 
 .more-icon {
@@ -193,6 +194,73 @@ body {
     transform: scale(1.02);
 }
 
+.interest-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--gap-lg);
+}
+
+.interest-card {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    min-height: 240px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.interest-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+.interest-card h3 {
+    font-size: 20px;
+    margin: 0 0 12px;
+}
+
+.interest-card a {
+    align-self: flex-start;
+    margin-top: auto;
+    padding-top: 20px;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.interest-card a:hover {
+    text-decoration: underline;
+}
+
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--gap-lg);
+    margin-top: 18px;
+}
+
+.project-gallery img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+@media (max-width: 650px) {
+    .interest-grid {
+        grid-template-columns: 1fr;
+    }
+
+        .project-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 1000px) {
 
     body {
@@ -223,5 +291,9 @@ body {
 
     .description-box p {
         font-size: 14px;
+    }
+
+        .content3 {
+        padding: 10px;
     }
 }
